@@ -21,14 +21,15 @@ const HookWithImmer = () => {
   function becomeOlder() {
     updatePerson(draft => {
       //   draft.age++;
-      draft.age = 33;
+      draft.age = 33; // 设置为之前的值，组件不会更新
     });
   }
 
   function plusCount() {
     setCount(count => {
       count.age = count.age + 1;
-      return count;
+      return count; // 返回同一个引用 组件不会更新，这跟setState有很大的区别
+      // setState返回的值是用一个引用，依然会触发组件更新
     });
   }
 
