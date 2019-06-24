@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Users from './pages/Users';
+import HookWithImmer from './pages/immutable/HookWithImmer';
 
 import './App.css';
 
@@ -36,19 +37,19 @@ class App extends React.Component {
               <Menu.Item key="1">
                 <Link to="/">
                   <Icon type="pie-chart" />
-                  <span>Option 1</span>
+                  <span>Home</span>
                 </Link>
               </Menu.Item>
               <Menu.Item key="2">
                 <Link to="/about">
                   <Icon type="desktop" />
-                  <span>Option 2</span>
+                  <span>About</span>
                 </Link>
               </Menu.Item>
               <Menu.Item key="3">
                 <Link to="/users">
                   <Icon type="inbox" />
-                  <span>Option 3</span>
+                  <span>Users</span>
                 </Link>
               </Menu.Item>
               <SubMenu
@@ -56,11 +57,13 @@ class App extends React.Component {
                 title={
                   <span>
                     <Icon type="mail" />
-                    <span>Navigation One</span>
+                    <span>Immutable</span>
                   </span>
                 }
               >
-                <Menu.Item key="5">Option 5</Menu.Item>
+                <Menu.Item key="5">
+                  <Link to="/hookWithImmer">Hook with immer</Link>
+                </Menu.Item>
                 <Menu.Item key="6">Option 6</Menu.Item>
                 <Menu.Item key="7">Option 7</Menu.Item>
                 <Menu.Item key="8">Option 8</Menu.Item>
@@ -87,6 +90,7 @@ class App extends React.Component {
             <Route path="/" exact component={Home} />
             <Route path="/about/" component={About} />
             <Route path="/users/" component={Users} />
+            <Route path="/hookWithImmer" component={HookWithImmer} />
           </div>
         </div>
       </Router>
