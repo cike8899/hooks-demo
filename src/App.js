@@ -7,6 +7,11 @@ import About from "./pages/About";
 import Users from "./pages/Users";
 import HookWithImmer from "./pages/immutable/HookWithImmer";
 import ComponentWithImmer from "./pages/immutable/ComponentWithImmer";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Users from "./pages/Users";
+import HookWithImmer from "./pages/immutable/HookWithImmer";
+import CascaderDemo from "pages/react-component/CascaderDemo";
 
 import "./App.css";
 
@@ -76,11 +81,13 @@ class App extends React.Component {
                 title={
                   <span>
                     <Icon type="appstore" />
-                    <span>Navigation Two</span>
+                    <span>react-component</span>
                   </span>
                 }
               >
-                <Menu.Item key="9">Option 9</Menu.Item>
+                <Menu.Item key="9">
+                  <Link to="/cascaderDemo">Cascader</Link>
+                </Menu.Item>
                 <Menu.Item key="10">Option 10</Menu.Item>
                 <SubMenu key="sub3" title="Submenu">
                   <Menu.Item key="11">Option 11</Menu.Item>
@@ -95,6 +102,7 @@ class App extends React.Component {
             <Route path="/users/" component={Users} />
             <Route path="/hookWithImmer" component={HookWithImmer} />
             <Route path="/componentWithImmer" component={ComponentWithImmer} />
+            <Route path="/cascaderDemo" component={CascaderDemo} />
           </div>
         </div>
       </Router>
