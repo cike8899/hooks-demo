@@ -1,13 +1,14 @@
-import React from 'react';
-import { Menu, Icon } from 'antd';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import React from "react";
+import { Menu, Icon } from "antd";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import Home from './pages/Home';
-import About from './pages/About';
-import Users from './pages/Users';
-import HookWithImmer from './pages/immutable/HookWithImmer';
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Users from "./pages/Users";
+import HookWithImmer from "./pages/immutable/HookWithImmer";
+import ComponentWithImmer from "./pages/immutable/ComponentWithImmer";
 
-import './App.css';
+import "./App.css";
 
 const { SubMenu } = Menu;
 
@@ -28,8 +29,8 @@ class App extends React.Component {
         <div className="app-wrapper">
           <div style={{ width: 256 }}>
             <Menu
-              defaultSelectedKeys={['1']}
-              defaultOpenKeys={['sub1']}
+              defaultSelectedKeys={["1"]}
+              defaultOpenKeys={["sub1"]}
               mode="inline"
               theme="dark"
               inlineCollapsed={this.state.collapsed}
@@ -64,7 +65,9 @@ class App extends React.Component {
                 <Menu.Item key="5">
                   <Link to="/hookWithImmer">Hook with immer</Link>
                 </Menu.Item>
-                <Menu.Item key="6">Option 6</Menu.Item>
+                <Menu.Item key="6">
+                  <Link to="/componentWithImmer">Component with immer</Link>
+                </Menu.Item>
                 <Menu.Item key="7">Option 7</Menu.Item>
                 <Menu.Item key="8">Option 8</Menu.Item>
               </SubMenu>
@@ -91,6 +94,7 @@ class App extends React.Component {
             <Route path="/about/" component={About} />
             <Route path="/users/" component={Users} />
             <Route path="/hookWithImmer" component={HookWithImmer} />
+            <Route path="/componentWithImmer" component={ComponentWithImmer} />
           </div>
         </div>
       </Router>
