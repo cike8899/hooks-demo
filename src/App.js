@@ -1,17 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Menu, Icon } from "antd";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Home from "./pages/Home";
-import About from "./pages/About";
 import Users from "./pages/Users";
 import HookWithImmer from "./pages/immutable/HookWithImmer";
 import ComponentWithImmer from "./pages/immutable/ComponentWithImmer";
-import Home from "./pages/Home";
 import About from "./pages/About";
-import Users from "./pages/Users";
-import HookWithImmer from "./pages/immutable/HookWithImmer";
 import CascaderDemo from "pages/react-component/CascaderDemo";
+import UseState from "pages/hooks/UseState";
 
 import "./App.css";
 
@@ -94,6 +91,20 @@ class App extends React.Component {
                   <Menu.Item key="12">Option 12</Menu.Item>
                 </SubMenu>
               </SubMenu>
+              <SubMenu
+                key="sub3"
+                title={
+                  <span>
+                    <Icon type="appstore" />
+                    <span>hooks</span>
+                  </span>
+                }
+              >
+                <Menu.Item key="9">
+                  <Link to="/useState">useState</Link>
+                </Menu.Item>
+                <Menu.Item key="10">Option 10</Menu.Item>
+              </SubMenu>
             </Menu>
           </div>
           <div className="app-content">
@@ -103,6 +114,7 @@ class App extends React.Component {
             <Route path="/hookWithImmer" component={HookWithImmer} />
             <Route path="/componentWithImmer" component={ComponentWithImmer} />
             <Route path="/cascaderDemo" component={CascaderDemo} />
+            <Route path="/useState" component={UseState} />
           </div>
         </div>
       </Router>
