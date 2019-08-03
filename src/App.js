@@ -1,16 +1,17 @@
-import React, { useState } from "react";
-import { Menu, Icon } from "antd";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Menu, Icon } from 'antd';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-import Home from "./pages/Home";
-import Users from "./pages/Users";
-import HookWithImmer from "./pages/immutable/HookWithImmer";
-import ComponentWithImmer from "./pages/immutable/ComponentWithImmer";
-import About from "./pages/About";
-import CascaderDemo from "pages/react-component/CascaderDemo";
-import UseState from "pages/hooks/UseState";
+import Home from './pages/Home';
+import Users from './pages/Users';
+import HookWithImmer from './pages/immutable/HookWithImmer';
+import ComponentWithImmer from './pages/immutable/ComponentWithImmer';
+import About from './pages/About';
+import CascaderDemo from 'pages/react-component/CascaderDemo';
+import UseState from 'pages/hooks/UseState';
+import SetStateDemo from 'pages/baseApi/SetStateDemo';
 
-import "./App.css";
+import './App.css';
 
 const { SubMenu } = Menu;
 
@@ -31,8 +32,8 @@ class App extends React.Component {
         <div className="app-wrapper">
           <div style={{ width: 256 }}>
             <Menu
-              defaultSelectedKeys={["1"]}
-              defaultOpenKeys={["sub1"]}
+              defaultSelectedKeys={['1']}
+              defaultOpenKeys={['sub1']}
               mode="inline"
               theme="dark"
               inlineCollapsed={this.state.collapsed}
@@ -105,6 +106,19 @@ class App extends React.Component {
                 </Menu.Item>
                 <Menu.Item key="10">Option 10</Menu.Item>
               </SubMenu>
+              <SubMenu
+                key="sub4"
+                title={
+                  <span>
+                    <Icon type="appstore" />
+                    <span>base api</span>
+                  </span>
+                }
+              >
+                <Menu.Item key="21">
+                  <Link to="/setStateDemo">setState</Link>
+                </Menu.Item>
+              </SubMenu>
             </Menu>
           </div>
           <div className="app-content">
@@ -115,6 +129,7 @@ class App extends React.Component {
             <Route path="/componentWithImmer" component={ComponentWithImmer} />
             <Route path="/cascaderDemo" component={CascaderDemo} />
             <Route path="/useState" component={UseState} />
+            <Route path="/setStateDemo" component={SetStateDemo} />
           </div>
         </div>
       </Router>
