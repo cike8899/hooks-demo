@@ -18,3 +18,5 @@ const ImmutagenLib = () => {
 };
 
 export default ImmutagenLib;
+
+// 来自于 精读《Epitath 源码 - renderProps 新用法》https://juejin.im/post/5bc3ed11e51d450e452aff73
