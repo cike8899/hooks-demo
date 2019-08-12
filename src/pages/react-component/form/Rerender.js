@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { Form, Input, Icon } from "antd";
+import React, { useRef, memo } from "react";
+import { Form, Input, Icon, Divider } from "antd";
 import { connect } from "react-redux";
 
 import styles from "./rerender.module.less";
@@ -30,8 +30,15 @@ const RerenderContainer = ({ form }) => {
           />
         )}
       </Form.Item>
+      <Divider />
       <div>
+        <p>内外层都有自己的form</p>
         <EnhancedRerender container={con.current} />
+      </div>
+      <Divider />
+      <p>内层组件的form来自外层</p>
+      <div>
+        <CahcedInner getFieldDecorator={getFieldDecorator} />
       </div>
     </div>
   );
@@ -72,5 +79,17 @@ const EnhancedRerender = connect(state => {
   console.info(state);
   return { counter: state, pig: { name: "ll" } }; // 必须返回对象，否则会报错
 })(create()(Rerender));
+
+const Inner = ({ getFieldDecorator }) => {
+  return (
+    <div>
+      {getFieldDecorator("jok")(
+        <Input placeholder="" className={styles.commonInput} />
+      )}
+    </div>
+  );
+};
+
+const CahcedInner = memo(Inner);
 
 export default create()(RerenderContainer);
