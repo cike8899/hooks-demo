@@ -12,6 +12,7 @@ import ComponentWithImmer from "./pages/immutable/ComponentWithImmer";
 import About from "./pages/About";
 import CascaderDemo from "pages/react-component/CascaderDemo";
 import UseState from "pages/hooks/UseState";
+import ReactReduxHooks from "pages/hooks/ReactReduxHooks";
 import SetStateDemo from "pages/baseApi/SetStateDemo";
 import ImmutagenLib from "pages/immutable/ImmutagenLib";
 import Rerender from "pages/react-component/form/Rerender";
@@ -114,7 +115,9 @@ class App extends React.Component {
                   <Menu.Item key="9">
                     <Link to="/useState">useState</Link>
                   </Menu.Item>
-                  <Menu.Item key="10">Option 10</Menu.Item>
+                  <Menu.Item key="10">
+                    <Link to="/reactReduxHooks">ReactReduxHooks</Link>
+                  </Menu.Item>
                 </SubMenu>
                 <SubMenu
                   key="sub4"
@@ -136,6 +139,7 @@ class App extends React.Component {
               <Route path="/about/" component={About} />
               <Route path="/users/" component={Users} />
               <Route path="/hookWithImmer" component={HookWithImmer} />
+              <Route path="/reactReduxHooks" component={ReactReduxHooks} />
               <Route
                 path="/componentWithImmer"
                 component={ComponentWithImmer}
