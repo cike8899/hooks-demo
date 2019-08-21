@@ -14,6 +14,7 @@ import CascaderDemo from "pages/react-component/CascaderDemo";
 import UseState from "pages/hooks/UseState";
 import ReactReduxHooks from "pages/hooks/ReactReduxHooks";
 import SetStateDemo from "pages/baseApi/SetStateDemo";
+import PureComponentDemo from "pages/baseApi/PureComponentDemo";
 import ImmutagenLib from "pages/immutable/ImmutagenLib";
 import Rerender from "pages/react-component/form/Rerender";
 
@@ -131,6 +132,9 @@ class App extends React.Component {
                   <Menu.Item key="21">
                     <Link to="/setStateDemo">setState</Link>
                   </Menu.Item>
+                  <Menu.Item key="1001">
+                    <Link to="/pureComponentDemo">PureComponentDemo</Link>
+                  </Menu.Item>
                 </SubMenu>
               </Menu>
             </div>
@@ -146,6 +150,7 @@ class App extends React.Component {
               />
               <Route path="/useState" component={UseState} />
               <Route path="/setStateDemo" component={SetStateDemo} />
+              <Route path="/pureComponentDemo" component={PureComponentDemo} />
               <Route path="/immutagen" component={ImmutagenLib} />
               <Route path="/cascaderDemo" component={CascaderDemo} />
               <Route path="/form/rerender" component={Rerender} />
