@@ -12,9 +12,17 @@ const Counter = ({ parentCount }) => {
 
 const UseState = () => {
   const [count, setCount] = useState(5);
+  const [form, setValues] = useState({ username: "", password: "" });
 
   const handleClick = () => {
     setCount(pre => pre + 1);
+  };
+
+  const submit = () => {
+    setValues(val => {
+      val.username = "xx" + 1;
+      return val;
+    });
   };
 
   return (
@@ -25,6 +33,15 @@ const UseState = () => {
       <p>
         <button type="button" onClick={handleClick}>
           Plus One
+        </button>
+      </p>
+      <p>
+        <p>
+          <label htmlFor="">username:</label>
+          <span>{form.username}</span>
+        </p>
+        <button type="button" onClick={submit}>
+          submit
         </button>
       </p>
       <Counter parentCount={count} />
